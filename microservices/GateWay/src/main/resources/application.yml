@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+       routes:
+        - id: r1
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/patients/**
+            - Path=/patients/*
+        - id: r2
+          uri: http://localhost:8100/
+          predicates:
+            - Path=/notifications/**
+            - Path=/notifications/*
